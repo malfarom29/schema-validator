@@ -4,5 +4,39 @@
   "description": "A library to validate schemas separating the validations in an object with two properties: whitelisted and nonWhitelisted. These validations are made with the class-validator library.",
   "main": "index.js",
   "author": "Manuel Alfaro",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "test:watch": "jest --watch --config jestconfig.json",
+    "test:cov": "jest --coverage --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malfarom29/schema-validator.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^26.6.3",
+    "prettier": "^2.3.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^26.5.6",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "class-transformer": "^0.4.0",
+    "class-validator": "~0.12.2"
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
