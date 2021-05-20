@@ -2,9 +2,10 @@
   "name": "schema-validator",
   "version": "1.0.0",
   "description": "A library to validate schemas separating the validations in an object with two properties: whitelisted and nonWhitelisted. These validations are made with the class-validator library.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Manuel Alfaro",
   "license": "MIT",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "test:watch": "jest --watch --config jestconfig.json",
